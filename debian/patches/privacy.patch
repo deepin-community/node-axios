@@ -1,0 +1,109 @@
+Description: privacy
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2022-11-29
+
+--- a/examples/all/index.html
++++ b/examples/all/index.html
+@@ -2,7 +2,7 @@
+ <html>
+   <head>
+     <title>axios - all example</title>
+-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
++    <link rel="stylesheet" type="text/css" href="/javascript/bootstrap/css/bootstrap.min.css"/>
+   </head>
+   <body class="container">
+     <h1>axios.all</h1>
+--- a/examples/amd/index.html
++++ b/examples/amd/index.html
+@@ -2,7 +2,7 @@
+ <html>
+   <head>
+     <title>AMD</title>
+-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
++    <link rel="stylesheet" type="text/css" href="/javascript/bootstrap/css/bootstrap.min.css"/>
+   </head>
+   <body class="container">
+     <h1>AMD</h1>
+@@ -17,7 +17,7 @@
+       </div>
+     </div>
+ 
+-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.16/require.min.js"></script>
++    <script src="/javascript/requirejs/require.min.js"></script>
+     <script>
+       requirejs.config({
+         paths: {
+--- a/examples/get/index.html
++++ b/examples/get/index.html
+@@ -2,7 +2,7 @@
+ <html>
+   <head>
+     <title>axios - get example</title>
+-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
++    <link rel="stylesheet" type="text/css" href="/javascript/bootstrap/css/bootstrap.min.css"/>
+   </head>
+   <body class="container">
+     <h1>axios.get</h1>
+--- a/examples/post/index.html
++++ b/examples/post/index.html
+@@ -2,7 +2,7 @@
+ <html>
+   <head>
+     <title>axios - post example</title>
+-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
++    <link rel="stylesheet" type="text/css" href="/javascript/bootstrap/css/bootstrap.min.css"/>
+   </head>
+   <body class="container">
+     <h1>axios.post</h1>
+--- a/examples/postMultipartFormData/index.html
++++ b/examples/postMultipartFormData/index.html
+@@ -2,7 +2,7 @@
+ <html>
+   <head>
+     <title>axios - post example</title>
+-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
++    <link rel="stylesheet" type="text/css" href="/javascript/bootstrap/css/bootstrap.min.css"/>
+     <style>
+       .postSubmission {
+         margin-top: 40px;
+--- a/examples/transform-response/index.html
++++ b/examples/transform-response/index.html
+@@ -2,7 +2,7 @@
+ <html>
+   <head>
+     <title>axios - transform response example</title>
+-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
++    <link rel="stylesheet" type="text/css" href="/javascript/bootstrap/css/bootstrap.min.css"/>
+   </head>
+   <body class="container">
+     <h1>transformResponse</h1>
+--- a/examples/upload/index.html
++++ b/examples/upload/index.html
+@@ -2,7 +2,7 @@
+ <html>
+   <head>
+     <title>axios - file upload example</title>
+-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
++    <link rel="stylesheet" type="text/css" href="/javascript/bootstrap/css/bootstrap.min.css"/>
+   </head>
+   <body class="container">
+     <h1>file upload</h1>
+--- a/sandbox/client.html
++++ b/sandbox/client.html
+@@ -2,7 +2,7 @@
+ <html>
+ <head>
+   <title>AXIOS | Sandbox</title>
+-  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
++  <link rel="stylesheet" type="text/css" href="/javascript/bootstrap/css/bootstrap.min.css"/>
+   <style type="text/css">
+     pre {
+       min-height: 39px;
+@@ -201,4 +201,4 @@
+     })();
+   </script>
+ </body>
+-</html>
+\ No newline at end of file
++</html>

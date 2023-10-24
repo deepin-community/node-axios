@@ -1,0 +1,1 @@
+mocha --exit -t 30000 test/unit/**/*.js
