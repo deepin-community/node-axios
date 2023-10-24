@@ -1,0 +1,44 @@
+Description: update rollup plugins
+Author: Yadd <yadd@debian.org>
+Forwarded: no
+Last-Update: 2022-11-29
+
+--- a/rollup.config.js
++++ b/rollup.config.js
+@@ -1,13 +1,13 @@
+-import resolve from '@rollup/plugin-node-resolve';
++import {nodeResolve} from '@rollup/plugin-node-resolve';
+ import commonjs from '@rollup/plugin-commonjs';
+ import {terser} from "rollup-plugin-terser";
+ import json from '@rollup/plugin-json';
+ import { babel } from '@rollup/plugin-babel';
+-import autoExternal from 'rollup-plugin-auto-external';
+ import bundleSize from 'rollup-plugin-bundle-size'
+ import path from 'path';
++import fs from 'fs';
+ 
+-const lib = require("./package.json");
++const lib = JSON.parse(fs.readFileSync("./package.json"));
+ const outputFileName = 'axios';
+ const name = "axios";
+ const namedInput = './index.js';
+@@ -30,7 +30,7 @@
+     },
+     plugins: [
+       json(),
+-      resolve({browser}),
++      nodeResolve({browser}),
+       commonjs(),
+       minified && terser(),
+       minified && bundleSize(),
+@@ -108,8 +108,8 @@
+         banner
+       },
+       plugins: [
+-        autoExternal(),
+-        resolve(),
++        json(),
++        nodeResolve(),
+         commonjs()
+       ]
+     }

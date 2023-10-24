@@ -1,0 +1,7 @@
+version=4
+opts=\
+repacksuffix=+dfsg,\
+repack,compression=xz,\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-axios-$1/ \
+ https://github.com/mzabriskie/axios/tags .*/archive/.*/v?([\d\.]+).tar.gz

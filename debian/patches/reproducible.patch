@@ -1,0 +1,16 @@
+Description: make build reproducible
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2022-10-09
+
+--- a/rollup.config.js
++++ b/rollup.config.js
+@@ -54,7 +54,7 @@
+ };
+ 
+ export default async () => {
+-  const year = new Date().getFullYear();
++  const year = new Date(process.env.SOURCE_DATE_EPOCH ? (process.env.SOURCE_DATE_EPOCH * 1000) : new Date().getTime()).getFullYear();
+   const banner = `// Axios v${lib.version} Copyright (c) ${year} ${lib.author} and contributors`;
+ 
+   return [
