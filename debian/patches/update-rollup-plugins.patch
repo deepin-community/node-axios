@@ -1,11 +1,11 @@
 Description: update rollup plugins
 Author: Yadd <yadd@debian.org>
 Forwarded: no
-Last-Update: 2022-11-29
+Last-Update: 2024-08-13
 
 --- a/rollup.config.js
 +++ b/rollup.config.js
-@@ -1,13 +1,13 @@
+@@ -1,14 +1,14 @@
 -import resolve from '@rollup/plugin-node-resolve';
 +import {nodeResolve} from '@rollup/plugin-node-resolve';
  import commonjs from '@rollup/plugin-commonjs';
@@ -13,7 +13,8 @@ Last-Update: 2022-11-29
  import json from '@rollup/plugin-json';
  import { babel } from '@rollup/plugin-babel';
 -import autoExternal from 'rollup-plugin-auto-external';
- import bundleSize from 'rollup-plugin-bundle-size'
+ import bundleSize from 'rollup-plugin-bundle-size';
+ import aliasPlugin from '@rollup/plugin-alias';
  import path from 'path';
 +import fs from 'fs';
  
@@ -22,16 +23,16 @@ Last-Update: 2022-11-29
  const outputFileName = 'axios';
  const name = "axios";
  const namedInput = './index.js';
-@@ -30,7 +30,7 @@
-     },
-     plugins: [
+@@ -34,7 +34,7 @@
+         entries: alias || []
+       }),
        json(),
 -      resolve({browser}),
 +      nodeResolve({browser}),
        commonjs(),
+ 
        minified && terser(),
-       minified && bundleSize(),
-@@ -108,8 +108,8 @@
+@@ -128,8 +128,8 @@
          banner
        },
        plugins: [

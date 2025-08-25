@@ -5,7 +5,7 @@ Last-Update: 2022-07-17
 
 --- a/test/unit/adapters/http.js
 +++ b/test/unit/adapters/http.js
-@@ -12,20 +12,14 @@
+@@ -13,20 +13,14 @@
  let server, proxy;
  import AxiosError from '../../../lib/core/AxiosError.js';
  import FormDataLegacy from 'form-data';
@@ -27,8 +27,8 @@ Last-Update: 2022-07-17
  
  const __filename = url.fileURLToPath(import.meta.url);
  const __dirname = path.dirname(__filename);
-@@ -96,20 +90,6 @@
-   });
+@@ -113,20 +107,6 @@
+   }
  }
  
 -const handleFormData = (req) => {
@@ -48,7 +48,7 @@ Last-Update: 2022-07-17
  function generateReadableStream(length = 1024 * 1024, chunkSize = 10 * 1024, sleep = 50) {
    return stream.Readable.from(async function* (){
      let dataLength = 0;
-@@ -1594,7 +1574,7 @@
+@@ -1696,7 +1676,7 @@
          form.append('fileStream', fileStream);
  
          server = http.createServer(function (req, res) {
@@ -57,7 +57,7 @@ Last-Update: 2022-07-17
  
            assert.ok(req.rawHeaders.find(header => header.toLowerCase() === 'content-length'));
  
-@@ -1614,116 +1594,21 @@
+@@ -1716,116 +1696,21 @@
                'Content-Type': 'multipart/form-data'
              }
            }).then(function (res) {
