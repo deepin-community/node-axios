@@ -5,6 +5,7 @@ form-data
 formidable	test
 get-stream	test
 proxy-from-env	test
+@rollup/plugin-alias
 @rollup/plugin-babel
 @rollup/plugin-commonjs
 @rollup/plugin-json

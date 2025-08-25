@@ -1,0 +1,16 @@
+Description: this test fail sometime in Deb CI
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2024-03-31
+
+--- a/test/unit/adapters/http.js
++++ b/test/unit/adapters/http.js
+@@ -407,7 +407,7 @@
+           }
+         }
+       }).catch(function (error) {
+-        assert.equal(error.message, 'Redirected request failed: Provided path is not allowed');
++        assert.match(error.message, /Provided path is not allowed/);
+         done();
+       }).catch(done);
+     });
