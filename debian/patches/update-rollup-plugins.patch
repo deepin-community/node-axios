@@ -1,45 +1,32 @@
 Description: update rollup plugins
 Author: Yadd <yadd@debian.org>
 Forwarded: no
-Last-Update: 2024-08-13
+Last-Update: 2026-03-29
 
 --- a/rollup.config.js
 +++ b/rollup.config.js
-@@ -1,14 +1,14 @@
+@@ -1,4 +1,4 @@
 -import resolve from '@rollup/plugin-node-resolve';
 +import {nodeResolve} from '@rollup/plugin-node-resolve';
  import commonjs from '@rollup/plugin-commonjs';
- import {terser} from "rollup-plugin-terser";
+ import terser from '@rollup/plugin-terser';
  import json from '@rollup/plugin-json';
- import { babel } from '@rollup/plugin-babel';
--import autoExternal from 'rollup-plugin-auto-external';
- import bundleSize from 'rollup-plugin-bundle-size';
- import aliasPlugin from '@rollup/plugin-alias';
- import path from 'path';
-+import fs from 'fs';
- 
--const lib = require("./package.json");
-+const lib = JSON.parse(fs.readFileSync("./package.json"));
- const outputFileName = 'axios';
- const name = "axios";
- const namedInput = './index.js';
 @@ -34,7 +34,7 @@
-         entries: alias || []
+         entries: alias || [],
        }),
        json(),
--      resolve({browser}),
-+      nodeResolve({browser}),
+-      resolve({ browser }),
++      nodeResolve({ browser }),
        commonjs(),
  
-       minified && terser(),
-@@ -128,8 +128,8 @@
-         banner
+       minified &&
+@@ -129,7 +129,8 @@
+         banner,
        },
        plugins: [
--        autoExternal(),
 -        resolve(),
 +        json(),
 +        nodeResolve(),
-         commonjs()
-       ]
-     }
+         commonjs(),
+         babel({
+           babelHelpers: 'bundled',

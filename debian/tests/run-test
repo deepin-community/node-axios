@@ -1,0 +1,20 @@
+#!/bin/sh
+set -e
+DIR=$(mktemp -d)
+trap "rm -rf $DIR" EXIT
+cp debian/tests/expected-methods.mjs "$DIR"
+cd "$DIR"
+pkgjs-ln form-data
+pkgjs-ln follow-redirects
+pkgjs-ln proxy-from-env
+pkgjs-ln axios
+node expected-methods.mjs
+
+node -e '
+const assert = require("assert");
+const axios = require("axios");
+assert.strictEqual(typeof axios, "function", "CJS: axios should be a function");
+assert.strictEqual(typeof axios.get, "function", "CJS: axios.get should be a function");
+assert.ok(axios.defaults, "CJS: axios.defaults should exist");
+console.log("CJS test passed");
+'

@@ -5,7 +5,7 @@ Last-Update: 2025-04-09
 
 --- a/rollup.config.js
 +++ b/rollup.config.js
-@@ -59,7 +59,7 @@
+@@ -76,7 +76,7 @@
  };
  
  export default async () => {
