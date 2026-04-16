@@ -3,43 +3,35 @@ Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.deb
 Uploaders: Pirate Praveen <praveen@debian.org>
 Section: javascript
 Testsuite: autopkgtest-pkg-nodejs
-Priority: optional
 Build-Depends: debhelper-compat (= 13)
  , dh-sequence-nodejs
- , mocha <!nocheck>
- , node-body-parser <!nocheck>
  , node-builtins
  , node-error-ex
- , node-express <!nocheck>
  , node-duplexer
  , node-figures
- , node-follow-redirects (>= 1.15.0) <!nocheck>
- , node-form-data (>= 4)
- , node-formidable <!nocheck>
- , node-get-stream <!nocheck>
+ , node-form-data
  , node-gzip-size
  , node-json-parse-better-errors
  , node-pretty-bytes
- , node-proxy-from-env <!nocheck>
  , node-read-pkg
+ , node-rollup-plugin-alias
  , node-rollup-plugin-babel
  , node-rollup-plugin-commonjs
  , node-rollup-plugin-json
  , node-rollup-plugin-node-resolve
- , node-rollup-plugin-terser
+ , node-rollup-plugin-terser (>= 7.0.2+~cs8.6.4-1~)
  , node-validate-npm-package-license
  , rollup
-Standards-Version: 4.6.2
+Standards-Version: 4.7.4
 Vcs-Browser: https://salsa.debian.org/js-team/node-axios
 Vcs-Git: https://salsa.debian.org/js-team/node-axios.git
 Homepage: https://github.com/mzabriskie/axios
-Rules-Requires-Root: no
 
 Package: node-axios
 Architecture: all
 Depends: ${misc:Depends}
- , node-follow-redirects (>= 1.15.0)
- , node-form-data (>= 4)
+ , node-follow-redirects
+ , node-form-data
  , node-proxy-from-env
 Provides: libjs-axios
 Suggests: javascript-common
