@@ -1,3 +1,56 @@
+node-axios (1.15.0-1deepin1) unstable; urgency=medium
+
+  * Fix CVE-2026-39865: HTTP/2 session cleanup state corruption
+
+ -- deepin-ci-robot <packages@deepin.org>  Wed, 15 Apr 2026 17:17:39 +0800
+
+node-axios (1.15.0-1) unstable; urgency=medium
+
+  * Team upload
+  * Declare compliance with policy 4.7.4
+  * Drop "Priority: optional"
+  * refresh patches
+  * New upstream version 1.15.0
+  * Refresh patches
+  * Replace test by custom autopkgtest
+    (upstream switched to vitest which is missing in Debian)
+  * Update privacy patch
+
+ -- Xavier Guimard <yadd@debian.org>  Fri, 10 Apr 2026 10:08:10 +0200
+
+node-axios (1.14.0+dfsg-1) unstable; urgency=medium
+
+  * New upstream version 1.14.0+dfsg (Closes: #1127907, CVE-2026-25639)
+  * Refresh patches for new upstream version
+  * Update extlinks: rollup-plugin-terser → @rollup/plugin-terser
+
+ -- Xavier Guimard <yadd@debian.org>  Sun, 29 Mar 2026 21:09:03 +0200
+
+node-axios (1.13.2+dfsg-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 1.13.2+dfsg
+
+ -- Yadd <yadd@debian.org>  Thu, 06 Nov 2025 07:27:18 +0100
+
+node-axios (1.13.1+dfsg-1) unstable; urgency=medium
+
+  * Team upload
+  * Increase test timeout
+  * Drop "Rules-Requires-Root: no"
+  * New upstream version 1.13.1+dfsg
+  * Update test modules
+  * Refresh patches
+
+ -- Yadd <yadd@debian.org>  Wed, 29 Oct 2025 18:46:09 +0100
+
+node-axios (1.12.1+dfsg-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 1.12.1+dfsg
+
+ -- Yadd <yadd@debian.org>  Sun, 14 Sep 2025 17:25:38 +0200
+
 node-axios (1.11.0+dfsg-1) unstable; urgency=medium
 
   * Team upload
